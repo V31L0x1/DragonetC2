@@ -1,4 +1,4 @@
-# DragonetC2 - Discord-based Command and Control (C2) Backdoor
+# DragonetC2 - Discord-based C2
 
 DragonetC2 is a sophisticated Discord-based Command and Control (C2) backdoor written in Go. This project demonstrates advanced remote access capabilities through a Discord bot interface, allowing for covert system control and information gathering.
 
