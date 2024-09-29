@@ -63,11 +63,11 @@ The bot responds to both text commands and slash commands:
    python3 builder.py
    ```
    ```bash
-   use discord
-   set guild-id <Your Discord Channel-ID>
-   set bot-token <Your Discord Bot Token>
-   show
-   build
+   [+] > use discord
+   [+] > set guild-id <Your Discord Channel-ID>
+   [+] > set bot-token <Your Discord Bot Token>
+   [+] > show
+   [+] > build
    ```
 
 ## Usage
