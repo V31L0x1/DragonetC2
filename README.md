@@ -9,9 +9,9 @@
 <h4 align="center">Dragonet Command and Control</h4>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Backdoor_Platform-Windows-blue">
-    <img src="https://img.shields.io/badge/Version-2.1.2-blue">
-    <img src="https://img.shields.io/badge/Python-3.8.9-blue">
+    <img src="https://img.shields.io/badge/Backdoor_Platform-blue">
+    <img src="https://img.shields.io/badge/Version-2.0.0-blue">
+    <img src="https://img.shields.io/badge/Go-1.23.1-blue">
 </p>
 
 ---
