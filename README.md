@@ -58,7 +58,7 @@ The bot responds to both text commands and slash commands:
    ```
    go build -ldflags -H=windowsgui
    ```
-6. You the builder.py Python script to automate the above.
+6. Use the builder.py Python script to automate the above.
    ```bash
    python3 builder.py
 
