@@ -59,10 +59,9 @@ The bot responds to both text commands and slash commands:
    go build -ldflags -H=windowsgui
    ```
 6. You the builder.py Python script to automate the above.
-   ```
-   python3 builder.py
-   ```
    ```bash
+   python3 builder.py
+
    [+] > use discord
    [+] > set guild-id <Your Discord Channel-ID>
    [+] > set bot-token <Your Discord Bot Token>
