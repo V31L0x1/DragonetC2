@@ -1,66 +1,89 @@
-<h1 align="center">
-  <br>
-  <a href="https://github.com/3ct0s/"><img src="https://i.ibb.co/VvPy0Xs/Dragonet-github.png" width=600 weigth=500 alt="Dragonet C2"></a>
-  <br>
-  Dragonet C2
-  <br>
-</h1>
+# DragonetC2 - Discord-based Command and Control (C2) Backdoor
 
-<h4 align="center">Dragonet C2 Command and Control</h4>
+DragonetC2 is a sophisticated Discord-based Command and Control (C2) backdoor written in Go. This project demonstrates advanced remote access capabilities through a Discord bot interface, allowing for covert system control and information gathering.
 
-<p align="center">
-    <img src="https://img.shields.io/badge/Backdoor_Platform-Windows-blue">
-    <img src="https://img.shields.io/badge/Version-2.1.2-blue">
-    <img src="https://img.shields.io/badge/Python-3.8.9-blue">
-</p>
+**⚠️ DISCLAIMER: This project is for educational purposes only. The authors do not condone or support any malicious use of this software. Use responsibly and only on systems you own or have explicit permission to test.**
 
----
+## Features
 
-## What is Dragonet C2?
+- Discord-based command and control
+- Remote command execution
+- File upload and download capabilities
+- Screenshot capture
+- System information gathering
+- Persistence mechanisms
+- Location tracking
+- Process listing
+- Directory navigation
+- Wallpaper changing
 
-Dragonet C2 is a malware generator that generates backdoors which use online platforms as C2s. This includes Discord, Telegram and Github. 
+## Commands
 
-Our goal is to prove that anything can be a C2, if you want to :) ...
+The bot responds to both text commands and slash commands:
 
-## How does it work?
+### Text Commands
+- `🏃‍♂️ <command>`: Runs a system command
+- `📸`: Takes a screenshot of all displays
+- `👇 <file>`: Uploads a specified file from the target system
+- `☝️ <path>`: Downloads the attached file to the specified path on the target system
+- `💀`: Shuts down the bot
+- `!help`: Displays the help menu
 
-The Dragonet C2 backdoors are using libraries which allow the backdoor to act as a "Bot" for the above-mentioned platforms. Essentially the attacker contacts the bot and specifies a malicious command to execute on the target "Agent". 
+### Slash Commands
+- `/cmd <command>`: Runs a system command
+- `/screenshot`: Takes a screenshot of all displays
+- `/download <file>`: Downloads a specified file from the target system
+- `/upload <url> <path>`: Uploads a file from a URL to a specified path on the target system
+- `/location`: Retrieves the current IP location
+- `/cd <path>`: Changes the working directory
+- `/ls [path]`: Lists directory contents
+- `/process`: Lists all running processes
+- `/persistent`: Makes the agent persistent on the target machine
+- `/wallpaper <url>`: Changes the desktop wallpaper
+- `/shutdown`: Shuts down the bot
+- `/help`: Displays the help menu
 
-Dragonet C2 is equipped with a lot of features **some** of which are:
-- Encrypted traffic (HTTPS)
-- Running system commands on target Agent
-- Keylogger (Limited to Discord)
-- Grabbing webcam snaps
-- Multiple online agents at a time (Limited to Discord & GitHub)
+## Setup
 
-## Installation and Usage
+1. Clone the repository
+2. Install the required Go dependencies:
+   ```
+   go get github.com/bwmarrin/discordgo
+   go get github.com/kbinani/screenshot
+   go get github.com/shirou/gopsutil/cpu
+   ```
+3. Create a Discord bot and obtain the bot token
+4. Replace `BOT_TOKEN` and `CHANNEL_ID` in `main.go` with your Discord bot token and channel ID
+5. Build the project:
+   ```
+   go build -ldflags -H=windowsgui
+   ```
 
-Dragonet C2 is better installed and used on Kali Linux:
-```
-git clone https://github.com/v31l0x1/Dragonet-C2
-cd ./Dragonet-c2
-chmod +x setup.sh
-./setup.sh
-```
-Once this is done we can use the builder. Let's build a discord based C2 backdoor:
-```
-python builder.py
-use discord
-set name <backdoor-name>
-set guild-id <server id from discord>
-set bot-token <discord bot token>
-set channel-id <channel id from discord server>
-set webhook <discord webhook>
-build
-```
+## Usage
 
-## How to Setup Dragonet C2
-Since the setup process is very specific for each platform:
+1. Run the compiled executable on the target system
+2. The bot will connect to the specified Discord channel
+3. Use the Discord interface to send commands and interact with the target system
 
-> Please follow the [setup guide](https://github.com/v31l0x1/dragonet-c2/wiki/) to setup Dragonet.
+## Security Considerations
 
-## Contributors
-Contributions are welcome to our GitHub repo! We value community involvement and appreciate all types of contributions, from bug reports to code. Join us in building something great and making a positive impact on the world. Get involved today!
+- This tool can be detected by antivirus software and should not be used for malicious purposes
+- Always ensure you have proper authorization before using this tool on any system
+- The bot token and channel ID are hardcoded in the binary, which poses a security risk if the binary is obtained by unauthorized parties
 
-## Disclaimer
-This github repository is made for educational purposes only. The developer is not responsible for any misuse of this software. **Do not use this software for illegal purposes.**
+## Contributing
+
+Contributions to improve the project are welcome. Please adhere to ethical guidelines and use this project responsibly.
+
+## License
+
+This project is for educational purposes only. Use at your own risk.
+
+## Acknowledgements
+
+This project uses the following open-source libraries:
+- [discordgo](https://github.com/bwmarrin/discordgo)
+- [screenshot](https://github.com/kbinani/screenshot)
+- [gopsutil](https://github.com/shirou/gopsutil)
+
+Created by V31l_0x1 | Twitter: @v31l_0x1
