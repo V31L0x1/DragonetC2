@@ -1197,8 +1197,8 @@ func registerSlashCommands(s *discordgo.Session) {
 
 func main() {
 	// Get token and channel ID from environment variables
-	token := "MTI2Njc4MzIxNzQ5MTM4MjMwMw.G83fYl.hNops37cenBRQowPaXuweLw-JA6yLU_B7Fb_rI"
-	myChannelId = "1266783026898272369"
+	token := "BOT_TOKEN"
+	myChannelId = "CHANNEL_ID"
 
 	// Create a new Discord session
 	dg, err := discordgo.New("Bot " + token)
@@ -1231,7 +1231,7 @@ func main() {
 		return
 	}
 	sessionId := fmt.Sprintf("%s_%s", runtime.GOOS, hostname)
-	c, err := dg.GuildChannelCreate("1266783026898272369", sessionId, 0) // Replace with your guild ID
+	c, err := dg.GuildChannelCreate("CHANNEL_ID", sessionId, 0) // Replace with your guild ID
 	if err != nil {
 		fmt.Println("Error creating channel:", err)
 		return
