@@ -153,7 +153,7 @@ try:
                 with open(list[0]+".go", 'w', encoding="utf-8") as f:
                     f.write(newfile)
 
-                os.system(f"go build -ldflags -H=windowsgui {list[0]}.go")
+                os.system(f"go build -ldflags=\" -w -s -H=windowsgui\" {list[0]}.go")
                 os.system("del "+list[0]+".go")
                 print(Fore.GREEN+f'[+] {list[0]}.exe has been created!')
             else:
