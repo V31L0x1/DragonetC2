@@ -68,6 +68,12 @@ The bot responds to both text commands and slash commands:
    go get github.com/bwmarrin/discordgo
    go get github.com/kbinani/screenshot
    go get github.com/shirou/gopsutil/cpu
+   go get modernc.org/sqlite
+   go get golang.org/x/sys/windows
+   go get github.com/shirou/gopsutil/process
+   go get github.com/reujab/wallpaper
+   go get github.com/TheTitanrain/w32
+   go get github.com/ShellCode33/VM-Detection/vmdetect
    ```
 3. Create a Discord bot and obtain the bot token
 4. Replace `BOT_TOKEN` and `CHANNEL_ID` in `main.go` with your Discord bot token and channel ID
