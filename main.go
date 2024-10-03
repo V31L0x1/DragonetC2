@@ -20,8 +20,8 @@ func main() {
 
 func runBot() {
 	// Get token and channel ID from environment variables
-	token := "MTI2Njc4MzIxNzQ5MTM4MjMwMw.GDWbQ9.PRfg-mM5mk-uup-Sw_VNrzDKbKQsxcSBTwCkZU"
-	handlers.MyChannelId = "1266783026898272369"
+	token := "BOT_TOKEN"
+	handlers.MyChannelId = "CHANNEL_ID"
 
 	// Create a new Discord session
 	dg, err := discordgo.New("Bot " + token)
