@@ -68,8 +68,6 @@ The bot responds to both text commands and slash commands:
 
 1. Clone the repository
 2. Install the required Go dependencies:
-<<<<<<< HEAD
-=======
    ```
    go get github.com/bwmarrin/discordgo
    go get github.com/kbinani/screenshot
@@ -85,7 +83,7 @@ The bot responds to both text commands and slash commands:
 4. Replace `BOT_TOKEN` and `CHANNEL_ID` in `main.go` with your Discord bot token and channel ID
 5. Build the project:
    ```
-   go build -ldflags -H=windowsgui
+   go build -ldflags="-s -w -H=windowsgui" .
    ```
 6. Use the builder.py Python script to automate the above.
    ```bash
