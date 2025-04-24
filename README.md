@@ -10,8 +10,8 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/Backdoor_Platform-blue">
-    <img src="https://img.shields.io/badge/Version-2.0.0-blue">
-    <img src="https://img.shields.io/badge/Go-1.23.1-blue">
+    <img src="https://img.shields.io/badge/Version-0.2.0-blue">
+    <img src="https://img.shields.io/badge/Go-1.24.1-blue">
 </p>
 
 ---
